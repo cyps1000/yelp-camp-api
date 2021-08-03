@@ -58,7 +58,10 @@ const updateCampground = async (req: Request, res: Response) => {
 
     await campground.save();
     res.status(202).send(campground);
-  } catch (error) {}
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Server Error");
+  }
 };
 
 /**

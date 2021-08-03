@@ -8,7 +8,7 @@ import { SecurityService, CorsService, BootService } from "./services";
 /**
  * Imports routes
  */
-import { authRouter, campgroundRouter } from "./routes";
+import { authRouter, campgroundRouter, commentRouter } from "./routes";
 
 /**
  * Creates the express server
@@ -39,5 +39,10 @@ Server.use(authRouter);
  * Campground Router
  */
 Server.use(campgroundRouter);
+
+/**
+ * Comment Router
+ */
+Server.use(commentRouter);
 
 export { Server };

@@ -33,7 +33,7 @@ const removeCampground = async (req: Request, res: Response) => {
      * Checks to see if the user is the author
      */
     if (campground.author.id.toString() !== req.currentUser!.id)
-      return res.status(401).json({ msg: "Not authorized" });
+      return res.status(401).send({ msg: "Not authorized" });
 
     await campground.remove();
     res.status(200).send({ msg: "Campground removed" });

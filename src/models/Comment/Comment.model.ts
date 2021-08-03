@@ -17,14 +17,13 @@ const CommentSchema = new mongoose.Schema(
     text: {
       type: String,
       required: true,
-      unique: true,
     },
     author: {
       id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "user",
       },
-      username: String,
+      alias: String,
     },
   },
   {

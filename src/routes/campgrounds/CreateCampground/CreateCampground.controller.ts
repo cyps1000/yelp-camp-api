@@ -25,17 +25,17 @@ import { requestValidations } from "./CreateCampground.validation";
 const createCampground = async (req: Request, res: Response) => {
   const { name, image, description } = req.body;
 
-  /**
-   * Checks for existing campgrounds
-   */
-  const campground = await Campground.findOne({ name });
-
-  if (campground)
-    return res
-      .status(401)
-      .send({ errors: [{ msg: "Campground name already taken" }] });
-
   try {
+    /**
+     * Checks for existing campgrounds
+     */
+    const campground = await Campground.findOne({ name });
+
+    if (campground)
+      return res
+        .status(401)
+        .send({ errors: [{ msg: "Campground name already taken" }] });
+
     /**
      * Handles building a new campground
      */
