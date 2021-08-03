@@ -26,6 +26,10 @@ export interface CampgroundDocument extends mongoose.Document {
     id: string;
     alias: string;
   };
+  rating: {
+    user: string;
+    stars: number;
+  }[];
   comments: string[];
   createdAt: Date;
   updatedAt: Date;

@@ -61,7 +61,7 @@ const loginUser = async (req: Request, res: Response) => {
 /**
  * Defines the controller
  */
-export const loginController: RequestHandler[] = [
+export const LoginController: RequestHandler[] = [
   ...requestValidations,
   validateRequest,
   loginUser,

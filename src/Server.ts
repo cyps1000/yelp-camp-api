@@ -8,7 +8,7 @@ import { SecurityService, CorsService, BootService } from "./services";
 /**
  * Imports routes
  */
-import { authRouter } from "./routes/auth";
+import { authRouter, campgroundRouter } from "./routes";
 
 /**
  * Creates the express server
@@ -34,5 +34,10 @@ SecurityService.config(Server);
  * Auth Router
  */
 Server.use(authRouter);
+
+/**
+ * Campground Router
+ */
+Server.use(campgroundRouter);
 
 export { Server };

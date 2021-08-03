@@ -5,7 +5,8 @@ import express from "express";
  */
 import { RegisterController } from "./Register";
 import { CurrentUserController } from "./CurrentUser";
-import { loginController } from "./Login";
+import { LoginController } from "./Login";
+import { RemoveUserController } from "./RemoveUser";
 
 /**
  * Defines the router
@@ -20,11 +21,16 @@ router.post("/auth/register", RegisterController);
 /**
  * Login
  */
-router.post("/auth/login", loginController);
+router.post("/auth/login", LoginController);
 
 /**
  * Current User
  */
 router.get("/auth/user", CurrentUserController);
+
+/**
+ * Remove User
+ */
+router.delete("/auth/user", RemoveUserController);
 
 export { router as authRouter };

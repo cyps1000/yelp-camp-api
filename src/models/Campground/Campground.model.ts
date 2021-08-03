@@ -30,10 +30,19 @@ const CampgroundSchema = new mongoose.Schema(
     author: {
       id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "user",
+        ref: "User",
       },
-      username: String,
+      alias: String,
     },
+    rating: [
+      {
+        user: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+        stars: Number,
+      },
+    ],
     comments: [
       {
         type: mongoose.Schema.Types.ObjectId,
