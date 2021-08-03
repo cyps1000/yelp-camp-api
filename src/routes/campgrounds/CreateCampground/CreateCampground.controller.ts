@@ -23,7 +23,7 @@ import { requestValidations } from "./CreateCampground.validation";
  * Handles creating a new campground
  */
 const createCampground = async (req: Request, res: Response) => {
-  const { name, image, description } = req.body;
+  const { name, image, description, location } = req.body;
 
   try {
     /**
@@ -43,6 +43,7 @@ const createCampground = async (req: Request, res: Response) => {
       name,
       image,
       description,
+      location,
       author: { id: req.currentUser!.id, alias: req.currentUser!.alias },
     });
     const createdCampground = await newCampground.save();

@@ -24,7 +24,7 @@ import { requestValidations } from "./UpdateCampground.validation";
  */
 const updateCampground = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const { name, image, description } = req.body;
+  const { name, image, description, location } = req.body;
 
   try {
     /**
@@ -54,6 +54,7 @@ const updateCampground = async (req: Request, res: Response) => {
      */
     campground.name = name;
     campground.description = description;
+    campground.location = location;
     campground.image = image;
 
     await campground.save();

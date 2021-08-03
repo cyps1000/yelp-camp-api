@@ -8,6 +8,7 @@ export interface CampgroundAttributes {
   name: string;
   image: string;
   description: string;
+  location: string;
   author: {
     id: string;
     alias: string;
@@ -22,6 +23,7 @@ export interface CampgroundDocument extends mongoose.Document {
   name: string;
   image: string;
   description: string;
+  location: string;
   author: {
     id: string;
     alias: string;
