@@ -1,4 +1,13 @@
-import express from "express";
+import { UserDocument } from "../../models";
+
+/**
+ * Defines the token interface
+ */
+export interface Token {
+  id: string;
+  iat: number;
+  exp: number;
+}
 
 /**
  * Expands global
@@ -12,8 +21,8 @@ declare global {
      * Expands the request interface
      */
     interface Request {
-      token?: any;
-      currentUser?: any | null;
+      token?: Token;
+      currentUser?: UserDocument | null;
     }
   }
 

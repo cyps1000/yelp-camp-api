@@ -6,6 +6,11 @@ import express from "express";
 import { SecurityService, CorsService, BootService } from "./services";
 
 /**
+ * Imports routes
+ */
+import { authRouter } from "./routes/auth";
+
+/**
  * Creates the express server
  */
 const Server = express();
@@ -24,5 +29,10 @@ CorsService.config(Server);
  * Configuress headers using helmet
  */
 SecurityService.config(Server);
+
+/**
+ * Auth Router
+ */
+Server.use(authRouter);
 
 export { Server };
