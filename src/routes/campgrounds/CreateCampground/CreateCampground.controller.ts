@@ -46,6 +46,7 @@ const createCampground = async (req: Request, res: Response) => {
       location,
       author: { id: req.currentUser!.id, alias: req.currentUser!.alias },
     });
+
     const createdCampground = await newCampground.save();
 
     res.status(201).send(createdCampground);

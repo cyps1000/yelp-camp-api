@@ -8,11 +8,14 @@ import { GetCampgroundByIdController } from "./GetCampground";
 import { GetCampgroundsController } from "./GetCampgrounds";
 import { RemoveCampgroundController } from "./RemoveCampground";
 import { UpdateCampgroundController } from "./UpdateCampground";
+import { SearchCampgroundController } from "./SearchCampground";
 
 /**
  * Defines the router
  */
 const router = express.Router();
+
+router.get("/campgrounds/search", SearchCampgroundController);
 
 /**
  * Create Campground

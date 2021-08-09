@@ -11,5 +11,7 @@ export const requestValidations = [
 
   body("description").trim().notEmpty().withMessage("Description is required"),
 
+  body("location").trim().notEmpty().withMessage("Location is required"),
+
   body("image").trim().notEmpty().isURL().withMessage("Image is required"),
 ];
